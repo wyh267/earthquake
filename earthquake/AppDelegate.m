@@ -9,19 +9,37 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "MLNavigationController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //NSMutableArray  *iphoneControllers=[NSMutableArray array];
+    //NSArray *itemNames=[[NSArray  alloc] initWithObjects:@"EarthQuake Info",@"Help",@"Setting",nil];
+    
+    
+   
+    
+    
     // Override point for customization after application launch.
+    //判断是iphone还是ipad设备
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+         
+        
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.navCtrl = [[MLNavigationController alloc]initWithRootViewController:self.viewController];
     } else {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+      
+    self.window.rootViewController = self.navCtrl;
+    //创建UITabBarController，将显示的内容添加进去
+    //UITabBarController *bar = [[UITabBarController alloc] init];
+    //bar.viewControllers = iphoneControllers;
+    //bar.customizableViewControllers = iphoneControllers;
+    //[self.window addSubview:bar.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    UIButton  *bun;
+}
+
+
+@property (nonatomic,retain)IBOutlet UIButton *bun;
 
 
 
+
+-(IBAction)pressButton1:(id)sender;
+
+
+-(id) initController:(NSString *)str;
 
 @end

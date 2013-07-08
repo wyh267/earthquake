@@ -33,6 +33,7 @@
 		E3CD1E5B178AEC42001924D9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E50178AEC42001924D9 /* AFURLConnectionOperation.m */; };
 		E3CD1E5C178AEC42001924D9 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E52178AEC42001924D9 /* AFXMLRequestOperation.m */; };
 		E3CD1E5D178AEC42001924D9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E54178AEC42001924D9 /* UIImageView+AFNetworking.m */; };
+		E3CD1E67178AFCA0001924D9 /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E66178AFCA0001924D9 /* MLNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		E3CD1E52178AEC42001924D9 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		E3CD1E53178AEC42001924D9 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		E3CD1E54178AEC42001924D9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		E3CD1E65178AFCA0001924D9 /* MLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationController.h; sourceTree = "<group>"; };
+		E3CD1E66178AFCA0001924D9 /* MLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 		E3960D1A1771FDEC00693E35 /* earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				E3CD1E65178AFCA0001924D9 /* MLNavigationController.h */,
+				E3CD1E66178AFCA0001924D9 /* MLNavigationController.m */,
 				E3CD1E41178AEC42001924D9 /* AFNetworking */,
 				E3960D231771FDEC00693E35 /* AppDelegate.h */,
 				E3960D241771FDEC00693E35 /* AppDelegate.m */,
@@ -341,6 +346,7 @@
 				E3CD1E5B178AEC42001924D9 /* AFURLConnectionOperation.m in Sources */,
 				E3CD1E5C178AEC42001924D9 /* AFXMLRequestOperation.m in Sources */,
 				E3CD1E5D178AEC42001924D9 /* UIImageView+AFNetworking.m in Sources */,
+				E3CD1E67178AFCA0001924D9 /* MLNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
