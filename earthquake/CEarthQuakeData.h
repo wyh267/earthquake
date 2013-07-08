@@ -11,12 +11,13 @@
 
 @interface CEarthQuakeData : NSObject
 {
-    NSString    *ref_url;
-    NSString    *info;
-    NSString    *local;
-    float       posionX;
-    float       posionY;
-    float       level;
+    NSString    *ref_url; //参考网址
+    NSString    *info;    //参考描述
+    NSString    *local;   //地点
+    float       posionX;  //经度
+    float       posionY;  //纬度
+    float       level;    //级别
+    float       deepth;   //深度
     
 }
 
