@@ -8,12 +8,19 @@
 
 #import "ViewController.h"
 
+
+
+//for test
+#import "CEarthQuakeUS.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+
+@synthesize bun,bun2;
 
 
 -(id) initController:(NSString *)str
@@ -56,6 +63,11 @@
     
 }
 
-
+-(IBAction)pressButton2:(id)sender
+{
+    CEarthQuakeUS *us=[[CEarthQuakeUS alloc]initWithUrl:@"http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary"];
+    [us setContentsUrl:@"kDay45"];
+    [us getServerContents];
+}
 
 @end

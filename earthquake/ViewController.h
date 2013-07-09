@@ -11,16 +11,17 @@
 @interface ViewController : UIViewController
 {
     UIButton  *bun;
+    UIButton  *bun2;
 }
 
 
 @property (nonatomic,retain)IBOutlet UIButton *bun;
-
+@property (nonatomic,retain)IBOutlet UIButton *bun2;
 
 
 
 -(IBAction)pressButton1:(id)sender;
-
+-(IBAction)pressButton2:(id)sender;
 
 -(id) initController:(NSString *)str;
 

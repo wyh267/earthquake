@@ -36,6 +36,7 @@
 		E3CD1E67178AFCA0001924D9 /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E66178AFCA0001924D9 /* MLNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E3CD1E6A178B01FC001924D9 /* CEarthQuakeData.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E69178B01FC001924D9 /* CEarthQuakeData.m */; };
 		E3CD1E6F178B0B46001924D9 /* CEarthQuakeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E6E178B0B46001924D9 /* CEarthQuakeBase.m */; };
+		E3CD1E72178BA8EF001924D9 /* CEarthQuakeUS.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E71178BA8EE001924D9 /* CEarthQuakeUS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		E3CD1E69178B01FC001924D9 /* CEarthQuakeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEarthQuakeData.m; sourceTree = "<group>"; };
 		E3CD1E6D178B0B46001924D9 /* CEarthQuakeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEarthQuakeBase.h; sourceTree = "<group>"; };
 		E3CD1E6E178B0B46001924D9 /* CEarthQuakeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEarthQuakeBase.m; sourceTree = "<group>"; };
+		E3CD1E70178BA8EE001924D9 /* CEarthQuakeUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEarthQuakeUS.h; sourceTree = "<group>"; };
+		E3CD1E71178BA8EE001924D9 /* CEarthQuakeUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEarthQuakeUS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,7 @@
 		E3960D1A1771FDEC00693E35 /* earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				E3CD1E73178BBCDD001924D9 /* iphoneViews */,
 				E3CD1E6C178B0221001924D9 /* Ext */,
 				E3CD1E6B178B0211001924D9 /* Core */,
 				E3CD1E41178AEC42001924D9 /* AFNetworking */,
@@ -236,6 +240,8 @@
 				E3CD1E69178B01FC001924D9 /* CEarthQuakeData.m */,
 				E3CD1E6D178B0B46001924D9 /* CEarthQuakeBase.h */,
 				E3CD1E6E178B0B46001924D9 /* CEarthQuakeBase.m */,
+				E3CD1E70178BA8EE001924D9 /* CEarthQuakeUS.h */,
+				E3CD1E71178BA8EE001924D9 /* CEarthQuakeUS.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -247,6 +253,13 @@
 				E3CD1E66178AFCA0001924D9 /* MLNavigationController.m */,
 			);
 			name = Ext;
+			sourceTree = "<group>";
+		};
+		E3CD1E73178BBCDD001924D9 /* iphoneViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iphoneViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +388,7 @@
 				E3CD1E67178AFCA0001924D9 /* MLNavigationController.m in Sources */,
 				E3CD1E6A178B01FC001924D9 /* CEarthQuakeData.m in Sources */,
 				E3CD1E6F178B0B46001924D9 /* CEarthQuakeBase.m in Sources */,
+				E3CD1E72178BA8EF001924D9 /* CEarthQuakeUS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

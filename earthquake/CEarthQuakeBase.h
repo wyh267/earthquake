@@ -15,10 +15,14 @@
     //用以填充的数据内容列表
     NSMutableArray *earth_quake_data_array;
     
-    //网址
+    //基础网址
+    NSString        *server_base_url;
+    
+    //最终网址
     NSString        *server_url;
     
-    //
+    //页面内容
+    NSString        *contents;
     
     
 }
