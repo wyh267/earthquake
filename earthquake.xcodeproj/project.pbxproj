@@ -37,6 +37,7 @@
 		E3CD1E6A178B01FC001924D9 /* CEarthQuakeData.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E69178B01FC001924D9 /* CEarthQuakeData.m */; };
 		E3CD1E6F178B0B46001924D9 /* CEarthQuakeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E6E178B0B46001924D9 /* CEarthQuakeBase.m */; };
 		E3CD1E72178BA8EF001924D9 /* CEarthQuakeUS.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E71178BA8EE001924D9 /* CEarthQuakeUS.m */; };
+		E3CD1E76178BD6D4001924D9 /* UIEarthQuakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD1E75178BD6D4001924D9 /* UIEarthQuakeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		E3CD1E6E178B0B46001924D9 /* CEarthQuakeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEarthQuakeBase.m; sourceTree = "<group>"; };
 		E3CD1E70178BA8EE001924D9 /* CEarthQuakeUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEarthQuakeUS.h; sourceTree = "<group>"; };
 		E3CD1E71178BA8EE001924D9 /* CEarthQuakeUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEarthQuakeUS.m; sourceTree = "<group>"; };
+		E3CD1E74178BD6D4001924D9 /* UIEarthQuakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEarthQuakeViewController.h; sourceTree = "<group>"; };
+		E3CD1E75178BD6D4001924D9 /* UIEarthQuakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEarthQuakeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,8 @@
 		E3CD1E73178BBCDD001924D9 /* iphoneViews */ = {
 			isa = PBXGroup;
 			children = (
+				E3CD1E74178BD6D4001924D9 /* UIEarthQuakeViewController.h */,
+				E3CD1E75178BD6D4001924D9 /* UIEarthQuakeViewController.m */,
 			);
 			name = iphoneViews;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				E3CD1E6A178B01FC001924D9 /* CEarthQuakeData.m in Sources */,
 				E3CD1E6F178B0B46001924D9 /* CEarthQuakeBase.m in Sources */,
 				E3CD1E72178BA8EF001924D9 /* CEarthQuakeUS.m in Sources */,
+				E3CD1E76178BD6D4001924D9 /* UIEarthQuakeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

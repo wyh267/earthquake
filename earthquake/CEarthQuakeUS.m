@@ -71,6 +71,7 @@
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                         us_earthquake_data  = (NSDictionary *)JSON;
                                                         NSLog(@"%@",us_earthquake_data);
+                                                        [self parseContents];
                                                         
                                                     }
 
@@ -84,6 +85,7 @@
     
  
     [operation start];
+    NSLog(@"Download contents now,please wait....");
     
     return YES;
     
@@ -96,7 +98,10 @@
 //
 -(bool)parseContents
 {
+    NSLog(@"Parse contents now....");
     
+    
+    return YES;
     
 }
 
