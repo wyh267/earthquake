@@ -10,6 +10,23 @@
 #import <Foundation/Foundation.h>
 #import "CEarthQuakeData.h"
 
+
+
+//回调接口说明
+@protocol earthquakeInfoDelegate
+@optional
+
+//返回数据
+-(void)earthquakeInfoSuccess:(NSMutableArray *)earthquake_info;
+
+//返回错误码和错误字符串
+-(void)earthquakeInfoError:(NSString *)error;
+
+@end
+
+
+
+
 @interface CEarthQuakeBase : NSObject
 {
     //用以填充的数据内容列表
@@ -24,10 +41,11 @@
     //页面内容
     NSString        *contents;
     
+    id<earthquakeInfoDelegate> delegate;
     
 }
 
-
+@property(assign)id<earthquakeInfoDelegate>   delegate;
 
 //
 //初始化，输入参数是服务器地址

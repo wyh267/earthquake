@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CEarthQuakeBase.h"
 
-@interface UIEarthQuakeViewController : UIViewController
+@interface UIEarthQuakeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,
+                                                         earthquakeInfoDelegate>
+{
+    NSString    *base_url;
+}
+
+
+
+
+
+-(BOOL)setBaseURL:(NSString *)mbase_url;
+
+
 
 @end

@@ -70,7 +70,7 @@
 
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                         us_earthquake_data  = (NSDictionary *)JSON;
-                                                        NSLog(@"%@",us_earthquake_data);
+                                                        //NSLog(@"%@",us_earthquake_data);
                                                         [self parseContents];
                                                         
                                                     }
@@ -100,6 +100,33 @@
 {
     NSLog(@"Parse contents now....");
     
+    NSLog(@"type:%@",[us_earthquake_data objectForKey:@"type"]);
+    
+    NSLog(@"title:%@",[[us_earthquake_data objectForKey:@"metadata"] objectForKey:@"title"]);
+    
+    NSArray *featuresArray=[[NSArray alloc]initWithArray:[us_earthquake_data objectForKey:@"features"]];
+    
+    for (int i =0; i < [featuresArray count]; i++) {
+        NSArray *point=[[NSArray alloc]initWithArray:[[[featuresArray objectAtIndex:i]
+                                                       objectForKey:@"geometry"]
+                                                      objectForKey:@"coordinates"]];
+        
+        //NSLog(@"type:%@",[[featuresArray objectAtIndex:i] objectForKey:@"type"]);
+        //NSLog(@"properties:%@",[[featuresArray objectAtIndex:i] objectForKey:@"properties"]);
+        NSLog(@"longitude:%@ latitude:%@ depth:%@",[point objectAtIndex:0],
+                                                    [point objectAtIndex:1],
+                                                    [point objectAtIndex:2]);
+        NSLog(@"place:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"place"]);
+        NSLog(@"time:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"time"]);
+        NSLog(@"mag:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"mag"]);
+    }
+
+    //NSLog(@"features:%@",[us_earthquake_data objectForKey:@"features"]);
+    
+    
+    NSMutableArray *test=[[NSMutableArray alloc]initWithObjects:@"Success",@"Success2",@"Success3", nil];
+    
+    [self.delegate earthquakeInfoSuccess:test];
     
     return YES;
     

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "UIEarthQuakeViewController.h"
 
 
 //for test
@@ -65,9 +65,14 @@
 
 -(IBAction)pressButton2:(id)sender
 {
+    UIEarthQuakeViewController *eqv=[[UIEarthQuakeViewController alloc]init];
+    [eqv setBaseURL:@"http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary"];
+    [self.navigationController pushViewController:eqv animated:YES];
+    /*
     CEarthQuakeUS *us=[[CEarthQuakeUS alloc]initWithUrl:@"http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary"];
     [us setContentsUrl:@"kDay45"];
     [us getServerContents];
+     */
 }
 
 @end
