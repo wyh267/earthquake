@@ -10,22 +10,25 @@
 
 @implementation CEarthQuakeData
 
+@synthesize ref_url,local,info,level,deepth,posionX,posionY;
 
 
 
 -(id)initWithPosionX:(float)X
              PosionY:(float)Y
               Levels:(float)lev
+              Deepth:(float)Deep
               refURL:(NSString *)refUrl
          Information:(NSString *)information
                Local:(NSString *)loc
 {
-    ref_url=[[NSString alloc]initWithString:refUrl];
-    local=[[NSString alloc]initWithString:loc];
-    info=[[NSString alloc]initWithString:information];
-    level=lev;
-    posionX=X;
-    posionY=Y;
+    self.ref_url=refUrl;//[[NSString alloc]initWithString:refUrl];
+    self.local=[[NSString alloc]initWithString:loc];
+    self.info=[[NSString alloc]initWithString:information];
+    self.level=lev;
+    self.deepth=Deep;
+    self.posionX=X;
+    self.posionY=Y;
     
     
     return self;

@@ -8,6 +8,7 @@
 
 #import "CEarthQuakeUS.h"
 #import "AFNetworking.h"
+#import "CEarthQuakeData.h"
 
 @implementation CEarthQuakeUS
 
@@ -106,6 +107,8 @@
     
     NSArray *featuresArray=[[NSArray alloc]initWithArray:[us_earthquake_data objectForKey:@"features"]];
     
+    NSMutableArray *earthquakeInformation=[[NSMutableArray alloc]init];
+    
     for (int i =0; i < [featuresArray count]; i++) {
         NSArray *point=[[NSArray alloc]initWithArray:[[[featuresArray objectAtIndex:i]
                                                        objectForKey:@"geometry"]
@@ -116,17 +119,34 @@
         NSLog(@"longitude:%@ latitude:%@ depth:%@",[point objectAtIndex:0],
                                                     [point objectAtIndex:1],
                                                     [point objectAtIndex:2]);
-        NSLog(@"place:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"place"]);
+        NSString *place=[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"place"];
+        NSLog(@"place:%@",place);
+        
+        NSString *information=[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"detail"];
+        
         NSLog(@"time:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"time"]);
-        NSLog(@"mag:%@",[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"mag"]);
+        float mag=[[[[featuresArray objectAtIndex:i] objectForKey:@"properties"] objectForKey:@"mag"] floatValue];
+        NSLog(@"mag:%f",mag);
+        
+        
+        CEarthQuakeData *info=[[CEarthQuakeData alloc]initWithPosionX:[[point objectAtIndex:0] floatValue]
+                                                              PosionY:[[point objectAtIndex:1] floatValue] Levels:mag
+                                                               Deepth:[[point objectAtIndex:2] floatValue]
+                                                               refURL:nil
+                                                          Information:information
+                                                                Local:place];
+        
+        [earthquakeInformation addObject:info];
+        
+        
     }
 
     //NSLog(@"features:%@",[us_earthquake_data objectForKey:@"features"]);
     
     
-    NSMutableArray *test=[[NSMutableArray alloc]initWithObjects:@"Success",@"Success2",@"Success3", nil];
+    //NSMutableArray *test=[[NSMutableArray alloc]initWithObjects:@"Success",@"Success2",@"Success3", nil];
     
-    [self.delegate earthquakeInfoSuccess:test];
+    [self.delegate earthquakeInfoSuccess:earthquakeInformation];
     
     return YES;
     

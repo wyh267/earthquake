@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CEarthQuakeBase.h"
 
+
 @interface UIEarthQuakeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,
                                                          earthquakeInfoDelegate>
 {
     NSString    *base_url;
+    
+    NSMutableArray *earthquake_info_array;
+    
+    UITableView *mytableView;
 }
 
 

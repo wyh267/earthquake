@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E325F09D178E3E94008AE87D /* UIEarthQuakeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E325F09C178E3E94008AE87D /* UIEarthQuakeCell.m */; };
+		E325F09F178E3EB5008AE87D /* EarthQuakeCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E325F09E178E3EB5008AE87D /* EarthQuakeCellNib.xib */; };
 		E3960D151771FDEC00693E35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D141771FDEC00693E35 /* UIKit.framework */; };
 		E3960D171771FDEC00693E35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D161771FDEC00693E35 /* Foundation.framework */; };
 		E3960D191771FDEC00693E35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D181771FDEC00693E35 /* CoreGraphics.framework */; };
@@ -51,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E325F09B178E3E94008AE87D /* UIEarthQuakeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEarthQuakeCell.h; sourceTree = "<group>"; };
+		E325F09C178E3E94008AE87D /* UIEarthQuakeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEarthQuakeCell.m; sourceTree = "<group>"; };
+		E325F09E178E3EB5008AE87D /* EarthQuakeCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EarthQuakeCellNib.xib; sourceTree = "<group>"; };
 		E3960D111771FDEC00693E35 /* earthquake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = earthquake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3960D141771FDEC00693E35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3960D161771FDEC00693E35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,6 +134,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E325F09A178E3E60008AE87D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E325F09B178E3E94008AE87D /* UIEarthQuakeCell.h */,
+				E325F09C178E3E94008AE87D /* UIEarthQuakeCell.m */,
+				E325F09E178E3EB5008AE87D /* EarthQuakeCellNib.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		E3960D081771FDEC00693E35 = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +276,7 @@
 		E3CD1E73178BBCDD001924D9 /* iphoneViews */ = {
 			isa = PBXGroup;
 			children = (
+				E325F09A178E3E60008AE87D /* Cell */,
 				E3CD1E74178BD6D4001924D9 /* UIEarthQuakeViewController.h */,
 				E3CD1E75178BD6D4001924D9 /* UIEarthQuakeViewController.m */,
 			);
@@ -344,6 +360,7 @@
 				E3960D2B1771FDED00693E35 /* Default-568h@2x.png in Resources */,
 				E3960D311771FDED00693E35 /* ViewController_iPhone.xib in Resources */,
 				E3960D341771FDED00693E35 /* ViewController_iPad.xib in Resources */,
+				E325F09F178E3EB5008AE87D /* EarthQuakeCellNib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +412,7 @@
 				E3CD1E6F178B0B46001924D9 /* CEarthQuakeBase.m in Sources */,
 				E3CD1E72178BA8EF001924D9 /* CEarthQuakeUS.m in Sources */,
 				E3CD1E76178BD6D4001924D9 /* UIEarthQuakeViewController.m in Sources */,
+				E325F09D178E3E94008AE87D /* UIEarthQuakeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

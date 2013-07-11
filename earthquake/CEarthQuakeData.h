@@ -23,9 +23,18 @@
 
 
 
+@property(nonatomic)NSString    *ref_url;
+@property(nonatomic)NSString    *info;
+@property(nonatomic)NSString    *local;
+@property(nonatomic)float       posionX;
+@property(nonatomic)float       posionY;
+@property(nonatomic)float       level;
+@property(nonatomic)float       deepth;
+
 -(id)initWithPosionX:(float)X
              PosionY:(float)Y
-              Levels:(float)level
+              Levels:(float)lev
+              Deepth:(float)Deep
               refURL:(NSString *)refUrl
          Information:(NSString *)information
                Local:(NSString *)loc;

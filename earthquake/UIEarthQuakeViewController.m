@@ -7,8 +7,10 @@
 //
 
 #import "UIEarthQuakeViewController.h"
+#import "UIEarthQuakeCell.h"
 
 #import "CEarthQuakeUS.h"
+#import "CEarthQuakeData.h"
 
 @interface UIEarthQuakeViewController ()
 
@@ -29,10 +31,12 @@
 {
     [super viewDidLoad];
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self.view addSubview:tableView];
+    earthquake_info_array=[[NSMutableArray alloc]init];
+    
+    mytableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+    mytableView.delegate = self;
+    mytableView.dataSource = self;
+    [self.view addSubview:mytableView];
     
     
 	// Do any additional setup after loading the view.
@@ -61,16 +65,45 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [earthquake_info_array count];
 }
 
 
 
-
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CustomCellIdentifier = @"CustomCellIdentifier";
+    
+    static BOOL nibsRegistered = NO;
+    if (!nibsRegistered) {
+        UINib *nib = [UINib nibWithNibName:@"EarthQuakeCellNib" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:CustomCellIdentifier];
+        nibsRegistered = YES;
+    }
+    
+    UIEarthQuakeCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
+    
+    
+    NSUInteger row = [indexPath row];
+    CEarthQuakeData *rowData = [earthquake_info_array objectAtIndex:row];
+    
+    //cell.magLabel.text = [[NSString alloc] initWithFormat:@"%f",rowData.level];
+    //cell.placeLabel.text = rowData.local;
+    //cell.deepthLabel.text = [[NSString alloc] initWithFormat:@"%f",rowData.deepth];
+    //cell.image = [imageList objectAtIndex:row];
+    
+    return cell;
+    
+    
+    
+    
+}
 
 -(void)earthquakeInfoSuccess:(NSMutableArray *)earthquake_info
 {
     NSLog(@"Success%@",earthquake_info);
+    earthquake_info_array=earthquake_info;
+    [mytableView reloadData];
 }
 
 
