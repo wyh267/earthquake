@@ -14,6 +14,9 @@
 
 @implementation UIEarthQuakeGuiedViewController
 
+
+@synthesize guiedWebView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //init webview
+    guiedWebView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+    
+    
+    [self.view addSubview:guiedWebView];
+    
+    
 	// Do any additional setup after loading the view.
 }
 

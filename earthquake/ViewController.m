@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "UIEarthQuakeViewController.h"
 
+#import "UIEarthQuakeGuiedViewController.h"
+
 
 //for test
 #import "CEarthQuakeUS.h"
@@ -74,5 +76,16 @@
     [us getServerContents];
      */
 }
+
+
+
+-(IBAction)pressButton3:(id)sender
+{
+    
+    UIEarthQuakeGuiedViewController *gui=[[UIEarthQuakeGuiedViewController alloc]init];
+    [self.navigationController pushViewController:gui animated:YES];
+}
+
+
 
 @end

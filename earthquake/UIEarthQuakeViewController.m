@@ -74,22 +74,28 @@
 {
     static NSString *CustomCellIdentifier = @"CustomCellIdentifier";
     
-    static BOOL nibsRegistered = NO;
+  /*  static BOOL nibsRegistered = NO;
     if (!nibsRegistered) {
-        UINib *nib = [UINib nibWithNibName:@"EarthQuakeCellNib" bundle:nil];
+        UINib *nib = [UINib nibWithNibName:@"UIEarthQuakeCell" bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:CustomCellIdentifier];
         nibsRegistered = YES;
     }
-    
-    UIEarthQuakeCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
-    
+    */
+    UIEarthQuakeCell *cell = (UIEarthQuakeCell *)[tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UIEarthQuakeCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     
     NSUInteger row = [indexPath row];
     CEarthQuakeData *rowData = [earthquake_info_array objectAtIndex:row];
     
-    //cell.magLabel.text = [[NSString alloc] initWithFormat:@"%f",rowData.level];
-    //cell.placeLabel.text = rowData.local;
-    //cell.deepthLabel.text = [[NSString alloc] initWithFormat:@"%f",rowData.deepth];
+    [cell.placeLabel setNumberOfLines:0];
+    cell.placeLabel.lineBreakMode = UILineBreakModeWordWrap;
+    
+    cell.magLabel.text = [[NSString alloc] initWithFormat:@"Level:%.2f",rowData.level];
+    cell.placeLabel.text = rowData.local;
+    cell.deepthLabel.text = [[NSString alloc] initWithFormat:@"Deepth:%.2f",rowData.deepth];
     //cell.image = [imageList objectAtIndex:row];
     
     return cell;
@@ -97,6 +103,12 @@
     
     
     
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90;
 }
 
 -(void)earthquakeInfoSuccess:(NSMutableArray *)earthquake_info
