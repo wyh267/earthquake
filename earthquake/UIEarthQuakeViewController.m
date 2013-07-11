@@ -8,6 +8,7 @@
 
 #import "UIEarthQuakeViewController.h"
 #import "UIEarthQuakeCell.h"
+#import "UIEarthQuakeShowViewController.h"
 
 #import "CEarthQuakeUS.h"
 #import "CEarthQuakeData.h"
@@ -36,6 +37,7 @@
     mytableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
     mytableView.delegate = self;
     mytableView.dataSource = self;
+    self.title=@"Information";
     [self.view addSubview:mytableView];
     
     
@@ -62,6 +64,8 @@
 }
 
 
+
+#pragma delegate 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -110,6 +114,17 @@
 {
     return 90;
 }
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UIEarthQuakeShowViewController *show=[[UIEarthQuakeShowViewController alloc]init];
+    [show setEarthQuakeData:[earthquake_info_array objectAtIndex:[indexPath row]]];
+    [self.navigationController pushViewController:show animated:YES];
+    
+}
+
 
 -(void)earthquakeInfoSuccess:(NSMutableArray *)earthquake_info
 {
