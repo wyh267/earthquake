@@ -29,6 +29,14 @@
     earthquakeMap = [[MKMapView alloc] initWithFrame:CGRectMake(5, 5, 310, 200)];
     earthquakeMap.showsUserLocation = YES;
     earthquakeMap.mapType = MKMapTypeStandard;
+    
+    
+    earthquakeInfo=[[UIWebView alloc]initWithFrame:CGRectMake(5, 210, 310, 280)];
+    
+    self.title=@"Detail";
+    [self.view setBackgroundColor:[UIColor grayColor]];
+    
+    [self.view addSubview:earthquakeInfo];
     [self.view addSubview:earthquakeMap];
     /*CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(39.915352,116.397105);
     
@@ -47,6 +55,9 @@
     
     
     [self createAnnotationWithCoords:coords];
+    
+    
+    [earthquakeInfo loadHTMLString:@"<html><head></head><body>Hello</body></html>" baseURL:nil];
     
     
     [super viewDidLoad];
