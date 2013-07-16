@@ -57,7 +57,15 @@
     [self createAnnotationWithCoords:coords];
     
     
-    [earthquakeInfo loadHTMLString:@"<html><head></head><body>Hello</body></html>" baseURL:nil];
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"earthinfo" ofType:@"html"];
+    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    [earthquakeInfo loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];
+
+    
+    
+    
+    
+    //[earthquakeInfo loadHTMLString:@"<html><head></head><body>Hello</body></html>" baseURL:nil];
     
     
     [super viewDidLoad];

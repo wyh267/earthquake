@@ -14,6 +14,7 @@
 		E325F0A9178E98D2008AE87D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E325F0A8178E98D2008AE87D /* MapKit.framework */; };
 		E325F0AB178E9A5B008AE87D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E325F0AA178E9A5B008AE87D /* CoreLocation.framework */; };
 		E325F0AE178E9D6B008AE87D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E325F0AD178E9D6B008AE87D /* CustomAnnotation.m */; };
+		E37CFE6A17953A9C0049FB92 /* earthinfo.html in Resources */ = {isa = PBXBuildFile; fileRef = E37CFE6917953A9C0049FB92 /* earthinfo.html */; };
 		E3960D151771FDEC00693E35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D141771FDEC00693E35 /* UIKit.framework */; };
 		E3960D171771FDEC00693E35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D161771FDEC00693E35 /* Foundation.framework */; };
 		E3960D191771FDEC00693E35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3960D181771FDEC00693E35 /* CoreGraphics.framework */; };
@@ -69,6 +70,7 @@
 		E325F0AA178E9A5B008AE87D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E325F0AC178E9D6A008AE87D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		E325F0AD178E9D6B008AE87D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		E37CFE6917953A9C0049FB92 /* earthinfo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = earthinfo.html; sourceTree = "<group>"; };
 		E3960D111771FDEC00693E35 /* earthquake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = earthquake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3960D141771FDEC00693E35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E3960D161771FDEC00693E35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -221,6 +223,7 @@
 		E3960D1B1771FDEC00693E35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E37CFE6917953A9C0049FB92 /* earthinfo.html */,
 				E3960D1C1771FDEC00693E35 /* earthquake-Info.plist */,
 				E3960D1D1771FDEC00693E35 /* InfoPlist.strings */,
 				E3960D201771FDEC00693E35 /* main.m */,
@@ -392,6 +395,7 @@
 				E3960D311771FDED00693E35 /* ViewController_iPhone.xib in Resources */,
 				E3960D341771FDED00693E35 /* ViewController_iPad.xib in Resources */,
 				E325F0A4178E770D008AE87D /* UIEarthQuakeCell.xib in Resources */,
+				E37CFE6A17953A9C0049FB92 /* earthinfo.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
