@@ -118,11 +118,15 @@
 
 -(void)shareMe
 {
+    
+    NSString *shareText=[[NSString alloc]initWithFormat:@"%@ !!Level:@.2f Deepth:%.2f!! -- share by earthquakeInfo",earthquake_data.local,earthquake_data.level,earthquake_data.deepth];
+    
+    
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"4f5cb21452701554ab00002e"
-                                      shareText:@"你要分享的文字"
+                                      shareText:shareText
                                      shareImage:[UIImage imageNamed:@"icon.png"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQzone,UMShareToDouban,UMShareToEmail,UMShareToEmail,UMShareToSms,UMShareToFacebook,UMShareToTwitter,nil]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQzone,UMShareToDouban,UMShareToWechatTimeline,UMShareToEmail,UMShareToSms,UMShareToFacebook,UMShareToTwitter,nil]
                                        delegate:nil];
 }
 

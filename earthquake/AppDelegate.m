@@ -13,6 +13,8 @@
 
 #import "UMSocial.h"
 
+#import "WXApi.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,8 +24,9 @@
     //NSArray *itemNames=[[NSArray  alloc] initWithObjects:@"EarthQuake Info",@"Help",@"Setting",nil];
     
     [UMSocialData setAppKey:@"4f5cb21452701554ab00002e"];
-   
-    
+    [WXApi registerApp:@"wx93cf22ad21fb9df0"];
+    [UMSocialControllerService defaultControllerService].socialData.extConfig.wxMessageType = UMSocialWXMessageTypeApp;   //可以指定音乐类型或者视频类型
+    [UMSocialData defaultData].extConfig.appUrl = @"http://www.uemng.com";
     
     // Override point for customization after application launch.
     //判断是iphone还是ipad设备
