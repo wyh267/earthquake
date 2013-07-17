@@ -11,6 +11,8 @@
 #import "ViewController.h"
 #import "MLNavigationController.h"
 
+#import "UMSocial.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -19,7 +21,7 @@
     //NSMutableArray  *iphoneControllers=[NSMutableArray array];
     //NSArray *itemNames=[[NSArray  alloc] initWithObjects:@"EarthQuake Info",@"Help",@"Setting",nil];
     
-    
+    [UMSocialData setAppKey:@"4f5cb21452701554ab00002e"];
    
     
     

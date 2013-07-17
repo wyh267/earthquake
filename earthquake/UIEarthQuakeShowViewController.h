@@ -31,4 +31,7 @@
 
 -(void)createAnnotationWithCoords:(CLLocationCoordinate2D) coords;
 
+
+-(void)shareMe;
+
 @end

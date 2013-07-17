@@ -7,6 +7,7 @@
 //
 
 #import "UIEarthQuakeShowViewController.h"
+#import "UMSocial.h"
 
 @interface UIEarthQuakeShowViewController ()
 
@@ -26,6 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareMe)];
+    
+    self.navigationItem.rightBarButtonItem = shareButton;
+    
+    [self.view setBackgroundColor:[UIColor grayColor]];
     earthquakeMap = [[MKMapView alloc] initWithFrame:CGRectMake(5, 5, 310, 200)];
     earthquakeMap.showsUserLocation = YES;
     earthquakeMap.mapType = MKMapTypeStandard;
@@ -59,7 +66,14 @@
     
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"earthinfo" ofType:@"html"];
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [earthquakeInfo loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];
+    [earthquakeInfo loadHTMLString:[[NSString alloc]initWithFormat:htmlString,
+                                    earthquake_data.local,
+                                    earthquake_data.level,
+                                    earthquake_data.deepth,
+                                    earthquake_data.posionY,
+                                    earthquake_data.posionX,
+                                    earthquake_data.local,
+                                    earthquake_data.local] baseURL:[NSURL URLWithString:filePath]];
 
     
     
@@ -101,6 +115,16 @@
 }
 
 
+
+-(void)shareMe
+{
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"4f5cb21452701554ab00002e"
+                                      shareText:@"你要分享的文字"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQzone,UMShareToDouban,UMShareToEmail,UMShareToEmail,UMShareToSms,UMShareToFacebook,UMShareToTwitter,nil]
+                                       delegate:nil];
+}
 
 
 
